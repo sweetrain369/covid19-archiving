@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from urllib import parse
 import time
-from tqdm import tqdm_notebook
 
 class Crawler():
     def __init__(self, keyword, newspaper):
@@ -26,8 +25,7 @@ class Crawler():
 
 
     def run(self):
-
-        for num in range(1,3):
+        for num in range(1,10):
             url = self.setUrl()
             url = url.format(page_num=num)
             print(url)
