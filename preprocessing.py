@@ -1,6 +1,8 @@
 from konlpy.tag import Okt
 import nltk
 
+
+
 class Preprocessor():
     def __init__(self, titles):
         self.titles = titles
@@ -21,7 +23,6 @@ class Preprocessor():
     def tokenText(self):
         okt = Okt()
         self.full_titles = self.tokensOneLine()
-        
         self.tokens_ko = okt.morphs(self.full_titles)
         return self.tokens_ko
 
@@ -35,5 +36,18 @@ class Preprocessor():
     def getMostUsedWords(self):
         self.tokens_ko = self.filterStopwords()
         ko = nltk.Text(self.tokens_ko, name='covid 뉴스 기사 상위 단어 100개')
-        self.data = ko.vocab().most_common(100)
+        self.data = ko.vocab().most_common(200)
         return self.data
+
+
+
+def getMorphs(text):
+    okt = Okt()
+    return okt.morphs(text)
+
+def filterStopwords(tokens_ko, stopwords):
+    tokens_ko = [each_word for each_word in tokens_ko if each_word not in stopwords]
+    return tokens_ko
+
+
+

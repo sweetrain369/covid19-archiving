@@ -6,6 +6,8 @@ from wordcloud import ImageColorGenerator
 import numpy as np
 import matplotlib.pyplot as plt
 
+from info import *
+
 
 def setHangulFont():
     path="c:/Windows/Fonts/malgun.ttf"
@@ -23,12 +25,20 @@ def createWordcloud(mask_path, data):
     mask = np.array(Image.open(mask_path))
     image_colors = ImageColorGenerator(mask)
 
-    wordcloud = WordCloud(font_path="C:\Windows\Fonts\\malgun.TTF", relative_scaling=0.1, background_color='white', min_font_size=1, max_font_size=100, mask=mask).generate_from_frequencies(dict(data))
-
-    default_colors = wordcloud.to_array()
+    wc = WordCloud(font_path="C:\Windows\Fonts\\malgun.TTF", relative_scaling=0.1, background_color='white' ,min_font_size=1, max_font_size=100, mask=mask).generate_from_frequencies(dict(data))
 
     plt.figure(figsize=(12,12))
-    plt.imshow(wordcloud.recolor(color_func=image_colors), interpolation='bilinear')
+    plt.imshow(wc, interpolation='bilinear')
     plt.axis('off')
     plt.show()
+    
+    plt.saveimg('D:\Danbi\covid19\wordcloud.png')
+    return wc
+
+
+# def dbDataSave():
+#     db = account['DB']
+#     db_info = db['host']
+    
+    
     
