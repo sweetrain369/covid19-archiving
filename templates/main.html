@@ -70,7 +70,7 @@
     <div>
       <h3 class="float-md-start mb-0">Key wordCloud</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000">Home</a>
       </nav>
     </div>
   </header>
@@ -79,7 +79,7 @@
     <h1>당신이 원하는 키워드로 구름을 만들어보세요!</h1>
     <br>
         <div class="input-group">
-            <input type="text" class="form-control width-resize" aria-label="Text input with dropdown button" placeholder="키워드를 입력하세요!" name="keyword"  onkeyup="enterKey();">
+            <input type="text" class="form-control width-resize" aria-label="Text input with dropdown button" placeholder="키워드를 입력하세요!" name="keyword" onkeyup="enterKey();">
             <div class="input-group-append">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,6 +111,7 @@
                 text = $('.form-control').val()
                 $('#popup #title').text(text)
                 popup.show()
+                $.post('/keyword', {name : text})
                 spinner = $('.spinner-border')
                 if ($('#wordcloud-img').css("display") == "none") {
                     spinner.show();
@@ -120,6 +121,7 @@
                 }
             }
         }
+        
     </script>
   </body>
   <footer>
@@ -135,8 +137,9 @@
               <div class="spinner-border m-5" role="status">
                 <p> loading ... </p>
                 </div>
-                
-            <img id="wordcloud-img" src="static\mask.jpg">  
+                {% if True %}
+            <img id="wordcloud-img" src="wordcloud/img.png">  
+                {% endif %}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -1,0 +1,328 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_UNCAUGHT_CXX_EXCEPTION (0xe06d7363) at pc=0x00007fff2dd84b59, pid=15336, tid=0x00000000000026f4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_291-b10) (build 1.8.0_291-b10)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.291-b10 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [KERNELBASE.dll+0x34b59]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000027f08c56000):  JavaThread "main" [_thread_in_native, id=9972, stack(0x000000e279c00000,0x000000e279df0000)]
+
+siginfo: ExceptionCode=0xe06d7363, ExceptionInformation=0x0000000019930520 0x000000e279ded720 0x00007ffefed82448 0x00007ffefecf0000 
+
+Registers:
+RAX=0x00000000564ec7b3, RBX=0x000000e279ded570, RCX=0x000000e279deb250, RDX=0x0000027f1c4103d0
+RSP=0x000000e279deaf90, RBP=0x000000e279deb640, RSI=0x000000e279deb0d0, RDI=0x000000e279debde0
+R8 =0x0000027f08c56000, R9 =0x0000027f1c4103d0, R10=0x0000027f08c56000, R11=0x00000001000123c8
+R12=0x000000e279dec3f8, R13=0x00007ffefed509aa, R14=0x0000000000000000, R15=0x0000000000000000
+RIP=0x00007fff2dd84b59, EFLAGS=0x0000000000000206
+
+Top of Stack: (sp=0x000000e279deaf90)
+0x000000e279deaf90:   0000027f08990a38 000000e279ded570
+0x000000e279deafa0:   000000e279deb0d0 0000000000000000
+0x000000e279deafb0:   00000001e06d7363 0000000000000000
+0x000000e279deafc0:   00007fff2dd84b59 0000000000000004
+0x000000e279deafd0:   0000000019930520 000000e279ded720
+0x000000e279deafe0:   00007ffefed82448 00007ffefecf0000
+0x000000e279deaff0:   000000e279ded7a0 00007ffefed509e9
+0x000000e279deb000:   0000000000000000 00007fff2dd992bb
+0x000000e279deb010:   0000000000000000 0000000000000000
+0x000000e279deb020:   0000dd9eda12b3cb 000000e279dec3f8
+0x000000e279deb030:   0000000000000005 00007fff245b49c6
+0x000000e279deb040:   0000000000000000 00007fff245c2830
+0x000000e279deb050:   00008a9dc4ffdc73 0000027f1c4d07a0
+0x000000e279deb060:   000000e279debde0 00007fff245b2ef1
+0x000000e279deb070:   000000e279ded570 000000e279deb640
+0x000000e279deb080:   000000e279deb0d0 0000000056453f96 
+
+Instructions: (pc=0x00007fff2dd84b59)
+0x00007fff2dd84b39:   8b d1 44 0f 47 c0 44 89 44 24 38 49 c1 e0 03 e8
+0x00007fff2dd84b49:   9a d1 05 00 48 8d 4c 24 20 48 ff 15 af 9f 18 00
+0x00007fff2dd84b59:   0f 1f 44 00 00 48 8b 8c 24 c0 00 00 00 48 33 cc
+0x00007fff2dd84b69:   e8 72 95 05 00 48 81 c4 d8 00 00 00 c3 cc 83 64 
+
+
+Register to memory mapping:
+
+RAX=0x00000000564ec7b3 is an unknown value
+RBX=0x000000e279ded570 is pointing into the stack for thread: 0x0000027f08c56000
+RCX=0x000000e279deb250 is pointing into the stack for thread: 0x0000027f08c56000
+RDX={method} {0x0000027f1c4103d8} 'arrayContentsEq' '([Ljava/lang/Object;[Ljava/lang/Object;)Z' in 'java/lang/Class'
+RSP=0x000000e279deaf90 is pointing into the stack for thread: 0x0000027f08c56000
+RBP=0x000000e279deb640 is pointing into the stack for thread: 0x0000027f08c56000
+RSI=0x000000e279deb0d0 is pointing into the stack for thread: 0x0000027f08c56000
+RDI=0x000000e279debde0 is pointing into the stack for thread: 0x0000027f08c56000
+R8 =0x0000027f08c56000 is a thread
+R9 ={method} {0x0000027f1c4103d8} 'arrayContentsEq' '([Ljava/lang/Object;[Ljava/lang/Object;)Z' in 'java/lang/Class'
+R10=0x0000027f08c56000 is a thread
+R11=0x00000001000123c8 is pointing into metadata
+R12=0x000000e279dec3f8 is pointing into the stack for thread: 0x0000027f08c56000
+R13=0x00007ffefed509aa is an unknown value
+R14=0x0000000000000000 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x000000e279c00000,0x000000e279df0000],  sp=0x000000e279deaf90,  free space=1963k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x34b59]
+C  [VCRUNTIME140.dll+0x2ef1]
+C  [ntdll.dll+0xa1406]
+C  [_jpype.cp37-win_amd64.pyd+0x498b5]
+C  [_jpype.cp37-win_amd64.pyd+0x4da22]
+C  [_jpype.cp37-win_amd64.pyd+0x42a55]
+C  0x0000027f0aac9f4e
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000027f091ee800 JavaThread "SIGINT handler" daemon [_thread_blocked, id=17360, stack(0x000000e27dde0000,0x000000e27dfd0000)]
+  0x0000027f0906e800 JavaThread "Service Thread" daemon [_thread_blocked, id=10520, stack(0x000000e27d810000,0x000000e27da00000)]
+  0x0000027f780dc000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=8560, stack(0x000000e27d620000,0x000000e27d810000)]
+  0x0000027f780db800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=8676, stack(0x000000e27d430000,0x000000e27d620000)]
+  0x0000027f780d9000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1644, stack(0x000000e27d240000,0x000000e27d430000)]
+  0x0000027f780d8800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=15496, stack(0x000000e27d050000,0x000000e27d240000)]
+  0x0000027f08fc3000 JavaThread "Attach Listener" daemon [_thread_blocked, id=16088, stack(0x000000e27ce60000,0x000000e27d050000)]
+  0x0000027f08f98800 JavaThread "Finalizer" daemon [_thread_blocked, id=17372, stack(0x000000e27ca80000,0x000000e27cc70000)]
+  0x0000027f08f91000 JavaThread "Reference Handler" daemon [_thread_blocked, id=15136, stack(0x000000e27c890000,0x000000e27ca80000)]
+=>0x0000027f08c56000 JavaThread "main" [_thread_in_native, id=9972, stack(0x000000e279c00000,0x000000e279df0000)]
+
+Other Threads:
+  0x0000027f08f8b000 VMThread [stack: 0x000000e27c6a0000,0x000000e27c890000] [id=14000]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000027f7f49b0b0] Threads_lock - owner thread: 0x0000027f08f8b000
+
+heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 38400K, used 5994K [0x00000000eab00000, 0x00000000ed580000, 0x0000000100000000)
+  eden space 33280K, 18% used [0x00000000eab00000,0x00000000eb0da898,0x00000000ecb80000)
+  from space 5120K, 0% used [0x00000000ed080000,0x00000000ed080000,0x00000000ed580000)
+  to   space 5120K, 0% used [0x00000000ecb80000,0x00000000ecb80000,0x00000000ed080000)
+ ParOldGen       total 87552K, used 0K [0x00000000c0000000, 0x00000000c5580000, 0x00000000eab00000)
+  object space 87552K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c5580000)
+ Metaspace       used 3560K, capacity 4656K, committed 4864K, reserved 1056768K
+  class space    used 394K, capacity 424K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000027f19e70000,0x0000027f1a080000] byte_map_base: 0x0000027f19870000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000056c07fe0
+ Begin Bits: [0x0000027f1a1e0000, 0x0000027f1b1e0000)
+ End Bits:   [0x0000027f1b1e0000, 0x0000027f1c1e0000)
+
+Polling page: 0x0000027f0aa80000
+
+CodeCache: size=245760Kb used=1423Kb max_used=1423Kb free=244336Kb
+ bounds [0x0000027f0aab0000, 0x0000027f0ad20000, 0x0000027f19ab0000]
+ total_blobs=439 nmethods=181 adapters=171
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.211 Thread 0x0000027f780d8800  191       4       java.util.LinkedList$ListItr::next (56 bytes)
+Event: 0.211 Thread 0x0000027f780dc000 nmethod 183 0x0000027f0ac0fe50 code [0x0000027f0ac102c0, 0x0000027f0ac129e0]
+Event: 0.211 Thread 0x0000027f780db800  192       4       java.lang.String::equals (81 bytes)
+Event: 0.211 Thread 0x0000027f780dc000  181       3       java.lang.String::compareTo (9 bytes)
+Event: 0.211 Thread 0x0000027f780dc000 nmethod 181 0x0000027f0ac13b90 code [0x0000027f0ac13d00, 0x0000027f0ac13ff0]
+Event: 0.211 Thread 0x0000027f780dc000  184       3       java.util.AbstractSequentialList::iterator (5 bytes)
+Event: 0.211 Thread 0x0000027f780dc000 nmethod 184 0x0000027f0ac14090 code [0x0000027f0ac14200, 0x0000027f0ac144f0]
+Event: 0.211 Thread 0x0000027f780dc000  188       3       java.util.AbstractList::listIterator (6 bytes)
+Event: 0.212 Thread 0x0000027f780dc000 nmethod 188 0x0000027f0ac145d0 code [0x0000027f0ac14740, 0x0000027f0ac14970]
+Event: 0.212 Thread 0x0000027f780dc000  189       3       java.util.LinkedList::listIterator (15 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.051 Thread 0x0000027f08c56000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eab07cc0) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hot
+Event: 0.051 Thread 0x0000027f08c56000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eab07fa8) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\
+Event: 0.104 Thread 0x0000027f08c56000 Exception <a 'java/io/IOException'> (0x00000000eaba2cf8) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.106 Thread 0x0000027f08c56000 Exception <a 'java/io/IOException'> (0x00000000eabacaf8) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.118 Thread 0x0000027f08c56000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eabc2bf8) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.118 Thread 0x0000027f08c56000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eabc2e08) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.128 Thread 0x0000027f08c56000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eac3f768) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.128 Thread 0x0000027f08c56000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eac3f978) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\prims\jvm.cpp, line 1523]
+Event: 0.128 Thread 0x0000027f08c56000 Exception <a 'java/lang/NoClassDefFoundError': org/jpype/classloader/DynamicClassLoader> (0x00000000eac3fe10) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 201]
+Event: 0.207 Thread 0x0000027f091eb000 Exception <a 'java/lang/InterruptedException'> (0x00000000eb034218) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u291\1294\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1686]
+
+Events (10 events):
+Event: 0.207 loading class java/util/HashMap$KeyIterator
+Event: 0.207 loading class java/util/HashMap$KeyIterator done
+Event: 0.207 loading class java/util/stream/IntStream
+Event: 0.207 loading class java/util/stream/BaseStream
+Event: 0.207 loading class java/util/stream/BaseStream done
+Event: 0.208 Thread 0x0000027f091eb000 Thread exited: 0x0000027f091eb000
+Event: 0.208 loading class java/util/stream/IntStream done
+Event: 0.212 Thread 0x0000027f091f4000 Thread exited: 0x0000027f091f4000
+Event: 0.212 Executing VM operation: Exit
+Event: 0.212 Thread 0x0000027f08fd7800 Thread exited: 0x0000027f08fd7800
+
+
+Dynamic libraries:
+0x00007ff6620b0000 - 0x00007ff6620cb000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\python.exe
+0x00007fff304b0000 - 0x00007fff306a5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff2fcf0000 - 0x00007fff2fdad000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff2dd50000 - 0x00007fff2e018000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff2dc50000 - 0x00007fff2dd50000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffee9e50000 - 0x00007ffeea210000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\python37.dll
+0x00007fff245b0000 - 0x00007fff245c6000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\VCRUNTIME140.dll
+0x00007fff2eb90000 - 0x00007fff2ebe5000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007fff30260000 - 0x00007fff302fe000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff2fc80000 - 0x00007fff2fceb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff214a0000 - 0x00007fff214aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff2f450000 - 0x00007fff2f57b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff2f340000 - 0x00007fff2f3ec000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff30300000 - 0x00007fff3039b000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff2d5b0000 - 0x00007fff2d5c8000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007fff2cd00000 - 0x00007fff2cd34000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007fff2e150000 - 0x00007fff2e177000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fff2d5a0000 - 0x00007fff2d5ac000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007fff2e220000 - 0x00007fff2e2a0000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff241c0000 - 0x00007fff241cf000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\python3.dll
+0x00007ffee9a80000 - 0x00007ffee9e42000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\lxml\etree.cp37-win_amd64.pyd
+0x00007fff235e0000 - 0x00007fff23609000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\lxml\_elementpath.cp37-win_amd64.pyd
+0x00007fff23ff0000 - 0x00007fff23ffd000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_hashlib.pyd
+0x00007ffee78e0000 - 0x00007ffee7c25000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\libcrypto-1_1.dll
+0x00007fff2e870000 - 0x00007fff2ea10000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff2e0d0000 - 0x00007fff2e0f2000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff30230000 - 0x00007fff3025a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff2e400000 - 0x00007fff2e50b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff2e180000 - 0x00007fff2e21d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff303a0000 - 0x00007fff303d0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff23080000 - 0x00007fff23095000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_socket.pyd
+0x00007fff23fe0000 - 0x00007fff23fe9000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\select.pyd
+0x00007fff23060000 - 0x00007fff2307f000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_ssl.pyd
+0x00007fff2e2a0000 - 0x00007fff2e3ff000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007fff22c60000 - 0x00007fff22d0c000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\libssl-1_1.dll
+0x00007fff23040000 - 0x00007fff23058000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_bz2.pyd
+0x00007fff15dc0000 - 0x00007fff15e01000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_lzma.pyd
+0x00007ffefecf0000 - 0x00007ffefed92000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\_jpype.cp37-win_amd64.pyd
+0x00007ffedff70000 - 0x00007ffee0002000 	C:\WINDOWS\SYSTEM32\MSVCP140.dll
+0x00007fff2c460000 - 0x00007fff2c46c000 	C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll
+0x00007fff15d70000 - 0x00007fff15db4000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_decimal.pyd
+0x00007fff2d3d0000 - 0x00007fff2d43a000 	C:\WINDOWS\system32\mswsock.dll
+0x00007fff23fc0000 - 0x00007fff23fc9000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_queue.pyd
+0x00007ffedb5f0000 - 0x00007ffedb6f8000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\unicodedata.pyd
+0x00007fff07ce0000 - 0x00007fff07d03000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_ctypes.pyd
+0x00007fff2fab0000 - 0x00007fff2fbda000 	C:\WINDOWS\System32\ole32.dll
+0x00007fff2e510000 - 0x00007fff2e865000 	C:\WINDOWS\System32\combase.dll
+0x00007fff2f7c0000 - 0x00007fff2f88d000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff07ca0000 - 0x00007fff07cd5000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_elementtree.pyd
+0x00007fff033c0000 - 0x00007fff033f2000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\pyexpat.pyd
+0x0000000065fc0000 - 0x0000000067d5b000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\.libs\libopenblas.GK7GX5KEQ4F6UYO3P26ULGBQYHGQO7J4.gfortran-win_amd64.dll
+0x00007ffeda820000 - 0x00007ffedaaf6000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_multiarray_umath.cp37-win_amd64.pyd
+0x00007fff229b0000 - 0x00007fff229cf000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_multiarray_tests.cp37-win_amd64.pyd
+0x00007fff22b00000 - 0x00007fff22b09000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\lapack_lite.cp37-win_amd64.pyd
+0x00007fff07c70000 - 0x00007fff07c9a000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\_umath_linalg.cp37-win_amd64.pyd
+0x00007fff10bb0000 - 0x00007fff10bd0000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\_pocketfft_internal.cp37-win_amd64.pyd
+0x00007ffef5590000 - 0x00007ffef561f000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\mtrand.cp37-win_amd64.pyd
+0x00007fff04360000 - 0x00007fff0438a000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\bit_generator.cp37-win_amd64.pyd
+0x00007fff03380000 - 0x00007fff033b1000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_common.cp37-win_amd64.pyd
+0x00007fff01430000 - 0x00007fff01470000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_bounded_integers.cp37-win_amd64.pyd
+0x00007fff03360000 - 0x00007fff03378000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_mt19937.cp37-win_amd64.pyd
+0x00007fff01410000 - 0x00007fff01427000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_philox.cp37-win_amd64.pyd
+0x00007fff01260000 - 0x00007fff01275000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_pcg64.cp37-win_amd64.pyd
+0x00007fff01240000 - 0x00007fff01252000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_sfc64.cp37-win_amd64.pyd
+0x00007ffeef9a0000 - 0x00007ffeefa48000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\_generator.cp37-win_amd64.pyd
+0x00007fff00100000 - 0x00007fff00113000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_tkinter.pyd
+0x00007ffed9710000 - 0x00007ffed98b4000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\tcl86t.dll
+0x00007ffed95a0000 - 0x00007ffed9707000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\tk86t.dll
+0x00007fff2ebf0000 - 0x00007fff2f332000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007fff2f580000 - 0x00007fff2f65a000 	C:\WINDOWS\System32\COMDLG32.dll
+0x00007fff19da0000 - 0x00007fff19db8000 	C:\WINDOWS\SYSTEM32\NETAPI32.dll
+0x00007fff2dab0000 - 0x00007fff2dade000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007fff2f660000 - 0x00007fff2f70e000 	C:\WINDOWS\System32\shcore.dll
+0x00007fff2d190000 - 0x00007fff2d1d2000 	C:\WINDOWS\SYSTEM32\LOGONCLI.DLL
+0x00007fff13f80000 - 0x00007fff1421a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007fff17ae0000 - 0x00007fff17af9000 	C:\WINDOWS\SYSTEM32\SAMCLI.DLL
+0x00007fff2d0b0000 - 0x00007fff2d0bc000 	C:\WINDOWS\SYSTEM32\NETUTILS.DLL
+0x00007ffedb540000 - 0x00007ffedb5e6000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\regex\_regex.cp37-win_amd64.pyd
+0x00007ffeffe70000 - 0x00007ffeffe87000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\_sqlite3.pyd
+0x00007ffed9460000 - 0x00007ffed9599000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\DLLs\sqlite3.dll
+0x00007fff22980000 - 0x00007fff22987000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\_c_internal_utils.cp37-win_amd64.pyd
+0x00007ffed8150000 - 0x00007ffed83e4000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\PIL\_imaging.cp37-win_amd64.pyd
+0x00007ffeff6a0000 - 0x00007ffeff6ce000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\_path.cp37-win_amd64.pyd
+0x00007ffee99e0000 - 0x00007ffee9a78000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\ft2font.cp37-win_amd64.pyd
+0x00007ffeff670000 - 0x00007ffeff692000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\kiwisolver.cp37-win_amd64.pyd
+0x00007ffeda760000 - 0x00007ffeda817000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\PIL\_imagingft.cp37-win_amd64.pyd
+0x00007ffeff300000 - 0x00007ffeff325000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\wordcloud\query_integral_image.cp37-win_amd64.pyd
+0x00007ffeff2c0000 - 0x00007ffeff2f5000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\_image.cp37-win_amd64.pyd
+0x00007ffefeca0000 - 0x00007ffefece1000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\backends\_backend_agg.cp37-win_amd64.pyd
+0x00007fff15d60000 - 0x00007fff15d68000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\matplotlib\backends\_tkagg.cp37-win_amd64.pyd
+0x00007fff2fdb0000 - 0x00007fff2fdb8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff11120000 - 0x00007fff11129000 	C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\markupsafe\_speedups.cp37-win_amd64.pyd
+0x00007fff2c4c0000 - 0x00007fff2c4d2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffef00d0000 - 0x00007ffef00e7000 	C:\WINDOWS\system32\napinsp.dll
+0x00007fff000e0000 - 0x00007fff000fb000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007fff24ba0000 - 0x00007fff24bb5000 	C:\WINDOWS\system32\wshbth.dll
+0x00007fff25780000 - 0x00007fff2579d000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007fff2d070000 - 0x00007fff2d0ab000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007fff2d0c0000 - 0x00007fff2d18c000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007fff30460000 - 0x00007fff30468000 	C:\WINDOWS\System32\NSI.dll
+0x00007fff00a20000 - 0x00007fff00a32000 	C:\WINDOWS\System32\winrnr.dll
+0x0000000056420000 - 0x0000000056c80000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\server\jvm.dll
+0x00007fff0ec90000 - 0x00007fff0ec99000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff1afd0000 - 0x00007fff1aff7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff0ced0000 - 0x00007fff0cee0000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\verify.dll
+0x00007ffefe3e0000 - 0x00007ffefe40b000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\java.dll
+0x00007ffefeb10000 - 0x00007ffefeb28000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\zip.dll
+0x00007fff2b9d0000 - 0x00007fff2c161000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007fff2d660000 - 0x00007fff2d68c000 	C:\WINDOWS\System32\Wldp.dll
+0x00007fff2db30000 - 0x00007fff2db4f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007fff2b0c0000 - 0x00007fff2b2a4000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\bin;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\*;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\kkma-2.0.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\aho-corasick.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\shineware-common-1.0.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\shineware-ds-1.0.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\komoran-3.0.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\snakeyaml-1.12.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\scala-library-2.12.3.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\twitter-text-1.14.7.jar;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\konlpy\java\*
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_291
+PATH=C:\Users\sweet\anaconda3\envs\covid;C:\Users\sweet\anaconda3\envs\covid\Library\mingw-w64\bin;C:\Users\sweet\anaconda3\envs\covid\Library\usr\bin;C:\Users\sweet\anaconda3\envs\covid\Library\bin;C:\Users\sweet\anaconda3\envs\covid\Scripts;C:\Users\sweet\anaconda3\envs\covid\bin;C:\Users\sweet\anaconda3\condabin;C:\Program Files (x86)\VMware\VMware Workstation\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\PuTTY;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Users\sweet\anaconda3\bin;C:\Program Files\Java\jdk1.8.0_291\bin;C:\Users\sweet\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\sweet\AppData\Local\Programs\Python\Python37;C:\Users\sweet\AppData\Local\Microsoft\WindowsApps;C:\Users\sweet\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sweet\AppData\Roaming\npm;C:\Users\sweet\anaconda3\Scripts;C:\Users\sweet\anaconda3\bin;C:\Program Files\Java\jdk1.8.0_291\bin;.;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\.libs;C:\Users\sweet\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\.libs
+USERNAME=sweet
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.928)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8270052k(2661368k free), swap 17182948k(9186420k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.291-b10) for windows-amd64 JRE (1.8.0_291-b10), built on Apr  9 2021 00:02:00 by "java_re" with MS VC++ 15.9 (VS2017)
+
+time: Fri May  7 22:57:41 2021
+timezone: 대한민국 표준시
+elapsed time: 0.341446 seconds (0d 0h 0m 0s)
+

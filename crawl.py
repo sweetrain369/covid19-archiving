@@ -5,8 +5,11 @@ import time
 from konlpy.tag import Okt
 from preprocessing import *
 
+from utils import dbDataSave
+
+
 stopwords = ['\n','에서','미','!!','룡','여행',':','"',':','집','/','좋은','앞','-','>','<','이','?','!','(', '의','뉴','2019.10','아영','정리','혼자','17','23','?','더','라','해외관광',',','...','워','본','[',']','위','곳','/','한','에','동','가','총','07',
-'.','2019.09','_','점','양','혼다','그','찌','성규',')','와']
+'.','2019.09','_','점','양','혼다','그','찌','성규',')','와','것','등']
 
 class Crawler():
     def __init__(self, keyword, newspaper):
@@ -63,7 +66,8 @@ class Crawler():
         okt = Okt()
         hrefs = self.getSearchUrl()
         news_contents = []
-        idx = 0
+        idx = 1
+        error = 0
         for href in hrefs:
             for url in href:
                 try:
@@ -78,30 +82,33 @@ class Crawler():
                         content = content + contents.get_text()
                     content_words = getMorphs(content)
                     content_words = filterStopwords(content_words, stopwords)
-
+                    content_words = '+'.join(content_words)
                     # title
                     title_elem = res.select('div#wrap > div#container > div.art_header > div.subject > h1')
                     title = title_elem[0].get_text()
                     title_words = getMorphs(title)
                     title_words = filterStopwords(title_words, stopwords)
-
+                    title_words = '+'.join(title_words)
                     # date 
                     date_elem = res.select('div#wrap > div#container > div.art_header > div.function_wrap > div.pagecontrol > div.byline > em')
                     date = date_elem[0].get_text().split(" ")[2]
+                    #print(idx)
 
-                    tp = (idx, url, date, content, title_words, content_words)
-                
-                except IndexError:
-                    print('title : ', title)
+                    tp = (idx, url, date, title, content, title_words, content_words)
+                    dbDataSave(tp)
+                    #print('success ')
 
-                #print('tp : ', tp)
+                    idx = idx + 1
+            
+                except IndexError as e:
+                    error = error + 1
+                    #print('title : ', title)
+                except KeyError as e:
+                    error = error + 1
 
-                idx = idx + 1
-        
-            print('-------------------------------------------------------------------------------')
+
         print('time :', time.time() - start) # 현재 시각 - 시작 시간 = 실행 시간
-        return tp
-
+        print('error : ', error)
 
 
 

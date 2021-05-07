@@ -43,7 +43,7 @@ class Preprocessor():
 
 def getMorphs(text):
     okt = Okt()
-    return okt.morphs(text)
+    return okt.nouns(text)
 
 def filterStopwords(tokens_ko, stopwords):
     tokens_ko = [each_word for each_word in tokens_ko if each_word not in stopwords]

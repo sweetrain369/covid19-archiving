@@ -4,6 +4,7 @@ from preprocessing import Preprocessor
 
 from flask import Flask, render_template, request
 import time
+import os
 
 app = Flask(__name__)
 
@@ -28,15 +29,25 @@ def home():
 
 
 if __name__ == '__main__':
+    #app.run(debug=True)
     crawler = Crawler('코로나19', '1032')
     #result = crawler.run()
     content = crawler.getKhan()
-    print(content)
+    #
     
     start = time.time()
     print('time :', time.time() - start) # 현재 시각 - 시작 시간 = 실행 시간
     
-    app.run(debug=True)
+    
+
+    # crawler = Crawler('코로나19', '1032')
+    # #result = crawler.run()
+    # content = crawler.getKhan()
+    # print(content)
+    
+    
+
+    
 
     
     

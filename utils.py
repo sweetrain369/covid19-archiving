@@ -5,8 +5,7 @@ from PIL import Image
 from wordcloud import ImageColorGenerator
 import numpy as np
 import matplotlib.pyplot as plt
-
-from info import *
+import pymysql
 
 
 def setHangulFont():
@@ -32,13 +31,19 @@ def createWordcloud(mask_path, data):
     plt.axis('off')
     plt.show()
     
-    plt.saveimg('D:\Danbi\covid19\wordcloud.png')
-    return wc
+    image_path = 'wordcloud/wordcloud.png'
+    plt.saveimg(image_path)
+    return image_path
 
 
-# def dbDataSave():
-#     db = account['DB']
-#     db_info = db['host']
+#def showWordcloud(image_path):
     
-    
+
+def dbDataSave(tp):
+    con = pymysql.connect(host='203.234.62.172', user = 'root', password = 'ami1223', db = 'covid19_news', charset = 'utf8')
+    cur = con.cursor()
+    #print(tp)
+    cur.execute("INSERT INTO navernews (idx, url, date, title, content, title_words, content_words) values (%s, %s, %s, %s, %s, %s, %s)", tp)
+    con.commit()
+    cur.close()
     
