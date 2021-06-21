@@ -111,16 +111,22 @@
                 text = $('.form-control').val()
                 $('#popup #title').text(text)
                 popup.show()
-                $.post('/keyword', {name : text})
+                $.post('/keyword', {name : text}, async=true)
+                
                 spinner = $('.spinner-border')
+                //path = 'wordcloud/' 
+                path = text + '.png'
+                //image_path = path + '.png'
+                //$.post('/wordcloud', {image_path : text})
+                $('#wordcloud-img').attr("src", "{{url_for('static', filename = path)}}")
                 if ($('#wordcloud-img').css("display") == "none") {
                     spinner.show();
                 }
                 else {
-                    spinner.hide();
+                  spinner.hide();
+                  }
                 }
             }
-        }
         
     </script>
   </body>
@@ -135,10 +141,11 @@
             <div class="modal-body font-color"> 
               <br>
               <div class="spinner-border m-5" role="status">
-                <p> loading ... </p>
                 </div>
-                {% if True %}
-            <img id="wordcloud-img" src="wordcloud/img.png">  
+                {% if path == '' %}
+                  <img id="wordcloud-img" style="display:none;"/> 
+                {% else %}
+                  <img id="wordcloud-img" src="{{url_for('static', filename = "코로나.png")}}"/>
                 {% endif %}
             </div>
             <div class="modal-footer">
